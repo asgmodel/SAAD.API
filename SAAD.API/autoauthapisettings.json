@@ -1,0 +1,54 @@
+{
+  "autoAuthWasmOptions": {
+    "apiOptions": {
+      "title": "Name API - ",
+      "version": "v1",
+      "enableSwagger": true,
+      "enableCors": true,
+      "allowedOrigins": [
+        "http://localhost:3000",
+        "http://localhost:4200",
+        "http://localhost:5000",
+        "https://localhost:5001"
+      ],
+      "rateLimit": {
+        "enabled": false,
+        "limit": 1000,
+        "periodMinutes": 1
+      }
+    },
+    "apiSalla": {
+      "baseUrl": "https://salla.lahjai.net",
+      "apiVersion": "v2",
+      "timeoutSeconds": 60,
+      "retryCount": 5,
+      "fullApiUrl": "https://salla.lahjai.net/api/v2"
+    },
+    "apiOAuth": {
+      "clientId": "dev_client_id",
+      "clientSecret": "dev_client_secret",
+      "appName": "dev",
+      "usePkce": true,
+      "scopeSeparator": " ",
+      "identityServerBaseUrl": "https://auth.dev.lahjai.net",
+      "apiScope": "API_SCOPE",
+      "allowScopes": [
+        "offline_access",
+        "openid",
+        "profile",
+        "email"
+      ],
+      "scopesString": "offline_access openid profile email"
+    },
+    "jwtSettings": {
+      "keyId": "D5966B9792FE28029F484D649F2F5EA1",
+      "modulus": "sV2RkdlvlzG9WqD-SmYUqVocQV_FiFWFEVVMB_c_-5S_miKur-3-_-XeI4x3BFY96m_gyy5guvL5gW-x1Oa84txrWD7NdtbGNC9CCMyHkSe4XMivg3AOHfCylmeQAHL91FtjtXiUp3I39waPtYTrVPpYRmM1I8lT81TPh8hy-jpBayrdjuvjOjrfT6E0aJPq0twhfDNjhWYd5UszVjwhPY4LLutzLXbHOMHkFyMUMrXiF_n3kI0RTOPUABJvfp79L9T0dcK9kLsMpc3f381gqf6-2J5Kvq6ZtdMcMXt2k5x20_cExpA1VP5p1uKQY_tcsPCG0lRmydK8I_2KzsbwzQ",
+      "exponent": "AQAB",
+      "issuer": "https://auth.lahjai.net",
+      "audience": "API_SCOPE",
+      "validateLifetime": true,
+      "clockSkewMinutes": 5,
+      "clockSkew": "00:05:00"
+    }
+  }
+}
