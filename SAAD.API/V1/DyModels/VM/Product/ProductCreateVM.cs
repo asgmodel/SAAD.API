@@ -12,7 +12,7 @@ namespace V1.DyModels.VMs
     public class ProductCreateVM : ITVM
     {
         ///
-        public String? ProductId { get; set; }
+        //public String? ProductId { get; set; }
         ///
         public String? Name { get; set; }
         ///
@@ -26,15 +26,15 @@ namespace V1.DyModels.VMs
         ///
         public String? Brand { get; set; }
         ///
-        public Int32 CategoryId { get; set; }
+        public String? CategoryId { get; set; }
         ///
         public DateTime CreatedAt { get; set; }
         ///
         public Boolean IsActive { get; set; }
         // public CategoryCreateVM? Category { get; set; }
         //
-        public List<ProductFileCreateVM>? ProductFiles { get; set; }
-        //
-        public List<ProductReviewCreateVM>? ProductReviews { get; set; }
+        //public List<ProductFileCreateVM>? ProductFiles { get; set; }
+        ////
+        //public List<ProductReviewCreateVM>? ProductReviews { get; set; }
     }
 }

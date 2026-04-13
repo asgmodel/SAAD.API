@@ -12,7 +12,7 @@ namespace V1.DyModels.Dto.Build.Requests
         /// <summary>
         /// CategoryId property for DTO.
         /// </summary>
-        public String? CategoryId { get; set; }
+        public String? CategoryId { get; set; }= "catgry-" + Guid.NewGuid();
         /// <summary>
         /// Name property for DTO.
         /// </summary>
@@ -37,7 +37,7 @@ namespace V1.DyModels.Dto.Build.Requests
         /// IsActive property for DTO.
         /// </summary>
         public Boolean IsActive { get; set; }
-        public ICollection<CategoryMediaRequestBuildDto>? CategoryMedia { get; set; }
-        public ICollection<ProductRequestBuildDto>? Products { get; set; }
+        //public ICollection<CategoryMediaRequestBuildDto>? CategoryMedia { get; set; }
+        //public ICollection<ProductRequestBuildDto>? Products { get; set; }
     }
 }

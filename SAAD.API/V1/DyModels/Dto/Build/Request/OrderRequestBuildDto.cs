@@ -12,11 +12,11 @@ namespace V1.DyModels.Dto.Build.Requests
         /// <summary>
         /// OrderId property for DTO.
         /// </summary>
-        public String? OrderId { get; set; }
+        public String? OrderId { get; set; }= "order-" + Guid.NewGuid();
         /// <summary>
         /// UserId property for DTO.
         /// </summary>
-        public Int32 UserId { get; set; }
+        public String? UserId { get; set; }
         /// <summary>
         /// OrderDate property for DTO.
         /// </summary>

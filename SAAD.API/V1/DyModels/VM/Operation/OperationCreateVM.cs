@@ -12,7 +12,7 @@ namespace V1.DyModels.VMs
     public class OperationCreateVM : ITVM
     {
         ///
-        public String? OperationId { get; set; }
+        //public String? OperationId { get; set; }
         ///
         public String? OperationName { get; set; }
         ///
@@ -24,9 +24,9 @@ namespace V1.DyModels.VMs
         ///
         public String? LogDetails { get; set; }
         ///
-        public Nullable<Int32> EventId { get; set; }
+        public String? EventId { get; set; }
         ///
-        public Nullable<Int32> UserId { get; set; }
+        public String? UserId { get; set; }
         ///
         public Nullable<Int32> RetryCount { get; set; }
         ///
@@ -34,6 +34,6 @@ namespace V1.DyModels.VMs
         // public EventCreateVM? Event { get; set; }
         // public UserCreateVM? User { get; set; }
         //
-        public List<TransactionCreateVM>? Transactions { get; set; }
+        //public List<TransactionCreateVM>? Transactions { get; set; }
     }
 }

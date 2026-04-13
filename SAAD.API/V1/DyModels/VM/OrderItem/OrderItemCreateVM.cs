@@ -12,11 +12,11 @@ namespace V1.DyModels.VMs
     public class OrderItemCreateVM : ITVM
     {
         ///
-        public String? OrderItemId { get; set; }
+        //public String? OrderItemId { get; set; }
         ///
-        public Int32 OrderId { get; set; }
+        public String? OrderId { get; set; }
         ///
-        public Int32 ProductId { get; set; }
+        public String? ProductId { get; set; }
         ///
         public Int32 Quantity { get; set; }
         ///

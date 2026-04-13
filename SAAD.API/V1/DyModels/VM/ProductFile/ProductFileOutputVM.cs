@@ -14,7 +14,7 @@ namespace V1.DyModels.VMs
         ///
         public String? ProductFileId { get; set; }
         ///
-        public Int32 ProductId { get; set; }
+        public String? ProductId { get; set; }
         ///
         public String? FileName { get; set; }
         ///

@@ -12,15 +12,15 @@ namespace V1.DyModels.Dto.Build.Requests
         /// <summary>
         /// ProductReviewId property for DTO.
         /// </summary>
-        public String? ProductReviewId { get; set; }
+        public String? ProductReviewId { get; set; }= "productprivew-" + Guid.NewGuid();
         /// <summary>
         /// UserId property for DTO.
         /// </summary>
-        public Int32 UserId { get; set; }
+        public String? UserId { get; set; }
         /// <summary>
         /// ProductId property for DTO.
         /// </summary>
-        public Int32 ProductId { get; set; }
+        public String? ProductId { get; set; }
         /// <summary>
         /// Rating property for DTO.
         /// </summary>

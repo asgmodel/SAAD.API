@@ -12,7 +12,7 @@ namespace V1.DyModels.Dto.Build.Requests
         /// <summary>
         /// TransactionId property for DTO.
         /// </summary>
-        public String? TransactionId { get; set; }
+        public String? TransactionId { get; set; }= "trans-" + Guid.NewGuid();
         /// <summary>
         /// TransactionDate property for DTO.
         /// </summary>
@@ -44,15 +44,15 @@ namespace V1.DyModels.Dto.Build.Requests
         /// <summary>
         /// OrderId property for DTO.
         /// </summary>
-        public Int32 OrderId { get; set; }
+        public String? OrderId { get; set; }
         /// <summary>
         /// OperationId property for DTO.
         /// </summary>
-        public Nullable<Int32> OperationId { get; set; }
+        public String? OperationId { get; set; }
         /// <summary>
         /// UserId property for DTO.
         /// </summary>
-        public Int32 UserId { get; set; }
+        public String? UserId { get; set; }
         /// <summary>
         /// BankReference property for DTO.
         /// </summary>

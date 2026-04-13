@@ -12,9 +12,9 @@ namespace V1.DyModels.VMs
     public class CategoryMediaCreateVM : ITVM
     {
         ///
-        public String? CategoryMediaId { get; set; }
+ 
         ///
-        public Int32 CategoryId { get; set; }
+        public String? CategoryId { get; set; }
         ///
         public String? MediaUrl { get; set; }
         ///

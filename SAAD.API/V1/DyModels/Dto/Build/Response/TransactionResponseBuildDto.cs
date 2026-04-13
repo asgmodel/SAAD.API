@@ -44,15 +44,15 @@ namespace V1.DyModels.Dto.Build.Responses
         /// <summary>
         /// OrderId property for DTO.
         /// </summary>
-        public Int32 OrderId { get; set; }
+        public String? OrderId { get; set; }
         /// <summary>
         /// OperationId property for DTO.
         /// </summary>
-        public Nullable<Int32> OperationId { get; set; }
+        public String? OperationId { get; set; }
         /// <summary>
         /// UserId property for DTO.
         /// </summary>
-        public Int32 UserId { get; set; }
+        public String? UserId { get; set; }
         /// <summary>
         /// BankReference property for DTO.
         /// </summary>

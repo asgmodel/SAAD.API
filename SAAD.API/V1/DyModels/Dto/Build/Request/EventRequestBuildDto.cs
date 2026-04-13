@@ -12,7 +12,7 @@ namespace V1.DyModels.Dto.Build.Requests
         /// <summary>
         /// EventId property for DTO.
         /// </summary>
-        public String? EventId { get; set; }
+        public String? EventId { get; set; }= "event-" + Guid.NewGuid();
         /// <summary>
         /// EventName property for DTO.
         /// </summary>

@@ -12,11 +12,11 @@ namespace V1.DyModels.Dto.Build.Requests
         /// <summary>
         /// ProductFileId property for DTO.
         /// </summary>
-        public String? ProductFileId { get; set; }
+        public String? ProductFileId { get; set; }= "productfiled-" + Guid.NewGuid();
         /// <summary>
         /// ProductId property for DTO.
         /// </summary>
-        public Int32 ProductId { get; set; }
+        public String? ProductId { get; set; }
         /// <summary>
         /// FileName property for DTO.
         /// </summary>

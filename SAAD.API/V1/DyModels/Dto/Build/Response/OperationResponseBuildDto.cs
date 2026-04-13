@@ -36,11 +36,11 @@ namespace V1.DyModels.Dto.Build.Responses
         /// <summary>
         /// EventId property for DTO.
         /// </summary>
-        public Nullable<Int32> EventId { get; set; }
+        public String? EventId { get; set; }
         /// <summary>
         /// UserId property for DTO.
         /// </summary>
-        public Nullable<Int32> UserId { get; set; }
+        public String? UserId { get; set; }
         /// <summary>
         /// RetryCount property for DTO.
         /// </summary>

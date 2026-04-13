@@ -12,7 +12,7 @@ namespace V1.DyModels.VMs
     public class CategoryCreateVM : ITVM
     {
         ///
-        public String? CategoryId { get; set; }
+        
         ///
         public String? Name { get; set; }
         ///
@@ -26,8 +26,6 @@ namespace V1.DyModels.VMs
         ///
         public Boolean IsActive { get; set; }
         //
-        public List<CategoryMediaCreateVM>? CategoryMedia { get; set; }
-        //
-        public List<ProductCreateVM>? Products { get; set; }
+      
     }
 }

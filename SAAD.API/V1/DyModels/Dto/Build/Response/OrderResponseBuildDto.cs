@@ -16,7 +16,7 @@ namespace V1.DyModels.Dto.Build.Responses
         /// <summary>
         /// UserId property for DTO.
         /// </summary>
-        public Int32 UserId { get; set; }
+        public String? UserId { get; set; }
         /// <summary>
         /// OrderDate property for DTO.
         /// </summary>

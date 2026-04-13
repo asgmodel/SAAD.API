@@ -16,7 +16,7 @@ namespace V1.DyModels.Dto.Build.Responses
         /// <summary>
         /// CategoryId property for DTO.
         /// </summary>
-        public Int32 CategoryId { get; set; }
+        public String? CategoryId { get; set; }
         /// <summary>
         /// MediaUrl property for DTO.
         /// </summary>

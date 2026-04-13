@@ -1,4 +1,4 @@
-
+ï»¿
 using System.Reflection;
 using System.Reflection.Emit;
 using AutoGenerator;
@@ -17,27 +17,38 @@ namespace LAHJA.API.Data
         {
         }
 
-    
 
-        //public DbSet<User> Users { get; set; }
-        
-        //public DbSet<Category> Categories { get; set; }
-        //public DbSet<CategoryMedia> CategoryMedias { get; set; }
-        //public DbSet<Product> Products { get; set; }
-        //public DbSet<ProductFile> ProductFiles { get; set; }
-        //public DbSet<ProductReview> ProductReviews { get; set; }
-        //public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
-        //public DbSet<Order> Orders { get; set; }
-        //public DbSet<OrderItem> OrderItems { get; set; }
-        //public DbSet<Event> Events { get; set; }
-        //public DbSet<Operation> Operations { get; set; }
-        //public DbSet<Transaction> Transactions { get; set; }
+
+        public DbSet<User> Users { get; set; }
+
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<CategoryMedia> CategoryMedias { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductFile> ProductFiles { get; set; }
+        public DbSet<ProductReview> ProductReviews { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<Event> Events { get; set; }
+        public DbSet<Operation> Operations { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            // Users â†’ Transactions
+            modelBuilder.Entity<Transaction>()
+                .HasOne(t => t.User)
+                .WithMany(u => u.Transactions)
+                .HasForeignKey(t => t.UserId)
+                .OnDelete(DeleteBehavior.NoAction); // âœ”
 
+            // Users â†’ Orders
+            modelBuilder.Entity<Order>()
+                .HasOne(o => o.User)
+                .WithMany(u => u.Orders)
+                .OnDelete(DeleteBehavior.Cascade); // âœ” ÙˆØ§Ø­Ø¯ ÙÙ‚Ø·
             // User configurations
 
             //modelBuilder.Entity<Order>()
@@ -81,7 +92,7 @@ namespace LAHJA.API.Data
             //    .HasForeignKey(pr => pr.UserId)
             //    .OnDelete(DeleteBehavior.Cascade);
 
-            //// ========== ÚáÇŞÇÊ ÇáİÆÉ ==========
+            //// ========== Ø¹Ù„Ø§Ù‚Ø§Øª Ø§Ù„ÙØ¦Ø© ==========
 
             //// Category - CategoryMedia
             //modelBuilder.Entity<CategoryMedia>()
@@ -97,7 +108,7 @@ namespace LAHJA.API.Data
             //    .HasForeignKey(p => p.CategoryId)
             //    .OnDelete(DeleteBehavior.Restrict);
 
-            //// ========== ÚáÇŞÇÊ ÇáãäÊÌ ==========
+            //// ========== Ø¹Ù„Ø§Ù‚Ø§Øª Ø§Ù„Ù…Ù†ØªØ¬ ==========
 
             //// Product - ProductFile
             //modelBuilder.Entity<ProductFile>()
@@ -120,7 +131,7 @@ namespace LAHJA.API.Data
             //    .HasForeignKey(sci => sci.ProductId)
             //    .OnDelete(DeleteBehavior.Restrict);
 
-            //// ========== ÚáÇŞÇÊ ÇáØáÈ ==========
+            //// ========== Ø¹Ù„Ø§Ù‚Ø§Øª Ø§Ù„Ø·Ù„Ø¨ ==========
 
             //// Order - OrderItem
             //modelBuilder.Entity<OrderItem>()
@@ -136,7 +147,7 @@ namespace LAHJA.API.Data
             //    .HasForeignKey(oi => oi.ProductId)
             //    .OnDelete(DeleteBehavior.Restrict);
 
-            //// ========== ÚáÇŞÇÊ ÇáÃÍÏÇË æÇáÚãáíÇÊ ==========
+            //// ========== Ø¹Ù„Ø§Ù‚Ø§Øª Ø§Ù„Ø£Ø­Ø¯Ø§Ø« ÙˆØ§Ù„Ø¹Ù…Ù„ÙŠØ§Øª ==========
 
             //// Event - Operation
             //modelBuilder.Entity<Operation>()
@@ -159,9 +170,9 @@ namespace LAHJA.API.Data
             //    .HasForeignKey(t => t.OrderId)
             //    .OnDelete(DeleteBehavior.Cascade);
 
-            //// ========== ÅÚÏÇÏÇÊ ÅÖÇİíÉ ==========
+            //// ========== Ø¥Ø¹Ø¯Ø§Ø¯Ø§Øª Ø¥Ø¶Ø§ÙÙŠØ© ==========
 
-            //// İåÑÓÉ ÇáÍŞæá ÇáãåãÉ
+            //// ÙÙ‡Ø±Ø³Ø© Ø§Ù„Ø­Ù‚ÙˆÙ„ Ø§Ù„Ù…Ù‡Ù…Ø©
             //modelBuilder.Entity<User>()
             //    .HasIndex(u => u.Email)
             //    .IsUnique();
@@ -180,7 +191,7 @@ namespace LAHJA.API.Data
             //modelBuilder.Entity<Transaction>()
             //    .HasIndex(t => t.ReferenceNumber);
 
-            //// ÊÍæíá Dictionary Åáì JSON
+            //// ØªØ­ÙˆÙŠÙ„ Dictionary Ø¥Ù„Ù‰ JSON
             //modelBuilder.Entity<Event>()
             //    .Property(e => e.EventData)
             //    .HasColumnType("nvarchar(max)");

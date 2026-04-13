@@ -14,9 +14,9 @@ namespace V1.DyModels.VMs
         ///
         public String? ProductReviewId { get; set; }
         ///
-        public Int32 UserId { get; set; }
+        public String? UserId { get; set; }
         ///
-        public Int32 ProductId { get; set; }
+        public String? ProductId { get; set; }
         ///
         public Int32 Rating { get; set; }
         ///

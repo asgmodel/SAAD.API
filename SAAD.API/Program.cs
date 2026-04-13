@@ -1,5 +1,6 @@
 ﻿using AutoGenerator;
 using LAHJA.API.Data;
+using Saad.API;
 using SADA.API.Models;
 using System.Reflection;
 
@@ -12,7 +13,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddSingleton<UserClaimsHelper>();
+ 
 
+builder.Services.AddScoped<IClientFactory, HttpClientFactory>();
+builder.Services.AddHttpContextAccessor();
 builder.Services
        .AddWasmAutoGeneratorApi<LahjaDataContext, ApplicationUser>(new()
        {
@@ -26,12 +31,12 @@ builder.Services
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+//// Configure the HTTP request pipeline.
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+//}
 
 app.UseHttpsRedirection();
 // ✅  Middleware Registration

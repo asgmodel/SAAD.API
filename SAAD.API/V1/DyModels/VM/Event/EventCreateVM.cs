@@ -12,7 +12,7 @@ namespace V1.DyModels.VMs
     public class EventCreateVM : ITVM
     {
         ///
-        public String? EventId { get; set; }
+        //public String? EventId { get; set; }
         ///
         public String? EventName { get; set; }
         ///
@@ -31,6 +31,6 @@ namespace V1.DyModels.VMs
         public String? Severity { get; set; }
         // public UserCreateVM? TriggeredByUser { get; set; }
         //
-        public List<OperationCreateVM>? Operations { get; set; }
+        //public List<OperationCreateVM>? Operations { get; set; }
     }
 }

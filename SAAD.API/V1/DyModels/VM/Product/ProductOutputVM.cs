@@ -26,7 +26,7 @@ namespace V1.DyModels.VMs
         ///
         public String? Brand { get; set; }
         ///
-        public Int32 CategoryId { get; set; }
+        public String? CategoryId { get; set; }
         ///
         public DateTime CreatedAt { get; set; }
         ///

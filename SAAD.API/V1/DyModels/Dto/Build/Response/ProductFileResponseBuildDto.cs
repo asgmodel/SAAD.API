@@ -16,7 +16,7 @@ namespace V1.DyModels.Dto.Build.Responses
         /// <summary>
         /// ProductId property for DTO.
         /// </summary>
-        public Int32 ProductId { get; set; }
+        public String? ProductId { get; set; }
         /// <summary>
         /// FileName property for DTO.
         /// </summary>

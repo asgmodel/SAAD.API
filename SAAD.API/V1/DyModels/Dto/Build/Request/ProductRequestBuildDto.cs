@@ -12,7 +12,7 @@ namespace V1.DyModels.Dto.Build.Requests
         /// <summary>
         /// ProductId property for DTO.
         /// </summary>
-        public String? ProductId { get; set; }
+        public String? ProductId { get; set; }= "proudct-" + Guid.NewGuid();
         /// <summary>
         /// Name property for DTO.
         /// </summary>
@@ -40,7 +40,7 @@ namespace V1.DyModels.Dto.Build.Requests
         /// <summary>
         /// CategoryId property for DTO.
         /// </summary>
-        public Int32 CategoryId { get; set; }
+        public String? CategoryId { get; set; }
         /// <summary>
         /// CreatedAt property for DTO.
         /// </summary>

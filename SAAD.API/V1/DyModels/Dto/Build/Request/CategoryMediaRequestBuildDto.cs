@@ -12,11 +12,11 @@ namespace V1.DyModels.Dto.Build.Requests
         /// <summary>
         /// CategoryMediaId property for DTO.
         /// </summary>
-        public String? CategoryMediaId { get; set; }
+        public String? CategoryMediaId { get; set; }= "categoryMedi-" + Guid.NewGuid();
         /// <summary>
         /// CategoryId property for DTO.
         /// </summary>
-        public Int32 CategoryId { get; set; }
+        public String? CategoryId { get; set; }
         /// <summary>
         /// MediaUrl property for DTO.
         /// </summary>
@@ -33,6 +33,6 @@ namespace V1.DyModels.Dto.Build.Requests
         /// DisplayOrder property for DTO.
         /// </summary>
         public Int32 DisplayOrder { get; set; }
-        public CategoryRequestBuildDto? Category { get; set; }
+        //public CategoryRequestBuildDto? Category { get; set; }
     }
 }

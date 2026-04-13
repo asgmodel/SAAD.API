@@ -12,9 +12,9 @@ namespace V1.DyModels.VMs
     public class ProductFileCreateVM : ITVM
     {
         ///
-        public String? ProductFileId { get; set; }
+        //public String? ProductFileId { get; set; }
         ///
-        public Int32 ProductId { get; set; }
+        public String? ProductId { get; set; }
         ///
         public String? FileName { get; set; }
         ///

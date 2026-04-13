@@ -12,7 +12,7 @@ namespace V1.DyModels.VMs
     public class UserCreateVM : ITVM
     {
         ///
-        public String? UserId { get; set; }
+        //public String? UserId { get; set; }
         ///
         public String? Username { get; set; }
         ///
@@ -40,16 +40,16 @@ namespace V1.DyModels.VMs
         ///
         public Nullable<DateTime> UpdatedAt { get; set; }
         //
-        public List<OrderCreateVM>? Orders { get; set; }
-        //
-        public List<TransactionCreateVM>? Transactions { get; set; }
-        //
-        public List<OperationCreateVM>? Operations { get; set; }
-        //
-        public List<EventCreateVM>? CreatedEvents { get; set; }
-        //
-        public List<ShoppingCartItemCreateVM>? ShoppingCart { get; set; }
-        //
-        public List<ProductReviewCreateVM>? ProductReviews { get; set; }
+        //public List<OrderCreateVM>? Orders { get; set; }
+        ////
+        //public List<TransactionCreateVM>? Transactions { get; set; }
+        ////
+        //public List<OperationCreateVM>? Operations { get; set; }
+        ////
+        //public List<EventCreateVM>? CreatedEvents { get; set; }
+        ////
+        //public List<ShoppingCartItemCreateVM>? ShoppingCart { get; set; }
+        ////
+        //public List<ProductReviewCreateVM>? ProductReviews { get; set; }
     }
 }

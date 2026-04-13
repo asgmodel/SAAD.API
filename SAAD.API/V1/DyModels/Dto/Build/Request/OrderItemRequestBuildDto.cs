@@ -12,15 +12,15 @@ namespace V1.DyModels.Dto.Build.Requests
         /// <summary>
         /// OrderItemId property for DTO.
         /// </summary>
-        public String? OrderItemId { get; set; }
+        public String? OrderItemId { get; set; } = "orderitem-" + Guid.NewGuid();
         /// <summary>
         /// OrderId property for DTO.
         /// </summary>
-        public Int32 OrderId { get; set; }
+        public String? OrderId { get; set; }
         /// <summary>
         /// ProductId property for DTO.
         /// </summary>
-        public Int32 ProductId { get; set; }
+        public String? ProductId { get; set; }
         /// <summary>
         /// Quantity property for DTO.
         /// </summary>

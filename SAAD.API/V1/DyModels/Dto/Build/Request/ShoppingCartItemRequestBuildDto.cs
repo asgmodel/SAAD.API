@@ -12,15 +12,15 @@ namespace V1.DyModels.Dto.Build.Requests
         /// <summary>
         /// ShoppingCartItemId property for DTO.
         /// </summary>
-        public String? ShoppingCartItemId { get; set; }
+        public String? ShoppingCartItemId { get; set; }= "sopping-" + Guid.NewGuid();
         /// <summary>
         /// UserId property for DTO.
         /// </summary>
-        public Int32 UserId { get; set; }
+        public String? UserId { get; set; }
         /// <summary>
         /// ProductId property for DTO.
         /// </summary>
-        public Int32 ProductId { get; set; }
+        public String? ProductId { get; set; }
         /// <summary>
         /// Quantity property for DTO.
         /// </summary>

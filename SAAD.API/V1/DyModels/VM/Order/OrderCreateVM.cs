@@ -12,9 +12,9 @@ namespace V1.DyModels.VMs
     public class OrderCreateVM : ITVM
     {
         ///
-        public String? OrderId { get; set; }
+        //public String? OrderId { get; set; }
         ///
-        public Int32 UserId { get; set; }
+        public String? UserId { get; set; }
         ///
         public DateTime OrderDate { get; set; }
         ///
@@ -47,8 +47,8 @@ namespace V1.DyModels.VMs
         public Nullable<DateTime> DeliveredAt { get; set; }
         // public UserCreateVM? User { get; set; }
         //
-        public List<OrderItemCreateVM>? OrderItems { get; set; }
-        //
-        public List<TransactionCreateVM>? Transactions { get; set; }
+        //public List<OrderItemCreateVM>? OrderItems { get; set; }
+        ////
+        //public List<TransactionCreateVM>? Transactions { get; set; }
     }
 }

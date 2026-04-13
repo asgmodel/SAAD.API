@@ -29,6 +29,10 @@ namespace V1.Repositories.Builder
          
         /// 
         }
+        public override Task<CategoryResponseBuildDto?> GetByIdAsync(string id)
+        {
+            return base.GetByIdAsync(id);
+        }
     //
     // Add additional methods or properties as needed.
     }

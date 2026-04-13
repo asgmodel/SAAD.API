@@ -14,7 +14,7 @@ namespace V1.DyModels.VMs
         ///
         public String? OrderId { get; set; }
         ///
-        public Int32 UserId { get; set; }
+        public String? UserId { get; set; }
         ///
         public DateTime OrderDate { get; set; }
         ///

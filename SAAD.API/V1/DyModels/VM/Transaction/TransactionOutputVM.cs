@@ -28,11 +28,11 @@ namespace V1.DyModels.VMs
         ///
         public String? Notes { get; set; }
         ///
-        public Int32 OrderId { get; set; }
+        public String? OrderId { get; set; }
         ///
-        public Nullable<Int32> OperationId { get; set; }
+        public String? OperationId { get; set; }
         ///
-        public Int32 UserId { get; set; }
+        public String? UserId { get; set; }
         ///
         public String? BankReference { get; set; }
         ///

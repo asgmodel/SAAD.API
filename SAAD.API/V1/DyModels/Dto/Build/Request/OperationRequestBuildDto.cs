@@ -12,7 +12,7 @@ namespace V1.DyModels.Dto.Build.Requests
         /// <summary>
         /// OperationId property for DTO.
         /// </summary>
-        public String? OperationId { get; set; }
+        public String? OperationId { get; set; }= "operation-" + Guid.NewGuid();
         /// <summary>
         /// OperationName property for DTO.
         /// </summary>
@@ -36,11 +36,11 @@ namespace V1.DyModels.Dto.Build.Requests
         /// <summary>
         /// EventId property for DTO.
         /// </summary>
-        public Nullable<Int32> EventId { get; set; }
+        public String? EventId { get; set; }
         /// <summary>
         /// UserId property for DTO.
         /// </summary>
-        public Nullable<Int32> UserId { get; set; }
+        public String? UserId { get; set; }
         /// <summary>
         /// RetryCount property for DTO.
         /// </summary>

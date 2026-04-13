@@ -26,8 +26,8 @@ namespace V1.DyModels.VMs
         ///
         public Boolean IsActive { get; set; }
         //
-        public List<CategoryMediaOutputVM>? CategoryMedia { get; set; }
-        //
-        public List<ProductOutputVM>? Products { get; set; }
+        //public List<CategoryMediaOutputVM>? CategoryMedia { get; set; }
+        ////
+        //public List<ProductOutputVM>? Products { get; set; }
     }
 }

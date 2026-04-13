@@ -25,7 +25,7 @@ namespace SADA.API.Models
     {
         public string UserId { get; set; }
 
-     
+
         public string Username { get; set; }
         public string Email { get; set; }
         public string PasswordHash { get; set; }
@@ -85,7 +85,7 @@ namespace SADA.API.Models
     public class CategoryMedia: ITModel
     {
         public string  CategoryMediaId { get; set; }
-        public int CategoryId { get; set; }
+        public string  CategoryId { get; set; }
         public string MediaUrl { get; set; }
         public string MediaType { get; set; } // Image, Video
         public string Title { get; set; }
@@ -106,7 +106,7 @@ namespace SADA.API.Models
         public string Brand { get; set; }
 
       
-        public int CategoryId { get; set; }
+        public string CategoryId { get; set; }
 
         public DateTime CreatedAt { get; set; }
         public bool IsActive { get; set; }
@@ -121,7 +121,7 @@ namespace SADA.API.Models
     public class ProductFile: ITModel
     {
         public string  ProductFileId { get; set; }
-        public int ProductId { get; set; }
+        public string  ProductId { get; set; }
         public string FileName { get; set; }
         public string FileUrl { get; set; }
         public string FileType { get; set; } // Image, Video, PDF
@@ -137,8 +137,8 @@ namespace SADA.API.Models
     public class ShoppingCartItem: ITModel
     {
         public string ShoppingCartItemId { get; set; }
-        public int UserId { get; set; }
-        public int ProductId { get; set; }
+        public string  UserId { get; set; }
+        public string  ProductId { get; set; }
         public int Quantity { get; set; }
         public DateTime AddedAt { get; set; }
 
@@ -153,8 +153,8 @@ namespace SADA.API.Models
     public class ProductReview: ITModel
     {
         public string  ProductReviewId { get; set; }
-        public int UserId { get; set; }
-        public int ProductId { get; set; }
+        public string UserId { get; set; }
+        public string  ProductId { get; set; }
         public int Rating { get; set; }  // 1-5
         public string Comment { get; set; }
         public DateTime CreatedAt { get; set; }
@@ -173,7 +173,7 @@ namespace SADA.API.Models
         public string OrderId { get; set; }
 
         // Foreign Key
-        public int UserId { get; set; }
+        public string  UserId { get; set; }
 
         public DateTime OrderDate { get; set; }
 
@@ -208,8 +208,8 @@ namespace SADA.API.Models
     public class OrderItem: ITModel
     {
         public string OrderItemId { get; set; }
-        public int OrderId { get; set; }
-        public int ProductId { get; set; }
+        public string  OrderId { get; set; }
+        public string  ProductId { get; set; }
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
         public decimal Discount { get; set; }
@@ -257,8 +257,8 @@ namespace SADA.API.Models
         public string LogDetails { get; set; }
 
         // Foreign Keys
-        public int? EventId { get; set; }
-        public int? UserId { get; set; }
+        public string ? EventId { get; set; }
+        public string ? UserId { get; set; }
 
         public int? RetryCount { get; set; }
         public string ErrorMessage { get; set; }
@@ -284,9 +284,9 @@ namespace SADA.API.Models
         public string Notes { get; set; }
 
         // Foreign Keys
-        public int OrderId { get; set; }
-        public int? OperationId { get; set; }
-        public int UserId { get; set; }
+        public string  OrderId { get; set; }
+        public string ? OperationId { get; set; }
+        public string UserId { get; set; }
 
         public string BankReference { get; set; }
         public string CardLastFour { get; set; }
