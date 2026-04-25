@@ -12,6 +12,22 @@ namespace V1.DyModels.VMs
     public class CategoryInfoVM : ITVM
     {
         ///
-        public string? Id { get; set; }
+        public String? CategoryId { get; set; }
+        ///
+        public String? Name { get; set; }
+        ///
+        public String? Description { get; set; }
+        ///
+        public String? ImageUrl { get; set; }
+        ///
+        public String? VideoUrl { get; set; }
+        ///
+        public DateTime CreatedAt { get; set; }
+        ///
+        public Boolean IsActive { get; set; }
+        //
+        public List<CategoryMediaOutputVM>? CategoryMedia { get; set; }
+        //
+        public List<ProductOutputVM>? Products { get; set; }
     }
 }

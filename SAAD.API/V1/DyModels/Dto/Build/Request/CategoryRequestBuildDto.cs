@@ -37,7 +37,7 @@ namespace V1.DyModels.Dto.Build.Requests
         /// IsActive property for DTO.
         /// </summary>
         public Boolean IsActive { get; set; }
-        public ICollection<CategoryMediaRequestBuildDto>? CategoryMedia { get; set; }
-        public ICollection<ProductRequestBuildDto>? Products { get; set; }
+        //public ICollection<CategoryMediaRequestBuildDto>? CategoryMedia { get; set; }
+        //public ICollection<ProductRequestBuildDto>? Products { get; set; }
     }
 }
