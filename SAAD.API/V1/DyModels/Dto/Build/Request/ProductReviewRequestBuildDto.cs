@@ -12,15 +12,11 @@ namespace V1.DyModels.Dto.Build.Requests
         /// <summary>
         /// ProductReviewId property for DTO.
         /// </summary>
-        public String? ProductReviewId { get; set; }= "productprivew-" + Guid.NewGuid();
+        public String? ProductReviewId { get; set; } = $"ProductReview_{Guid.NewGuid().ToString()}";
         /// <summary>
         /// UserId property for DTO.
         /// </summary>
         public String? UserId { get; set; }
-        /// <summary>
-        /// ProductId property for DTO.
-        /// </summary>
-        public String? ProductId { get; set; }
         /// <summary>
         /// Rating property for DTO.
         /// </summary>
@@ -30,14 +26,21 @@ namespace V1.DyModels.Dto.Build.Requests
         /// </summary>
         public String? Comment { get; set; }
         /// <summary>
-        /// CreatedAt property for DTO.
+        /// UserName property for DTO.
         /// </summary>
-        public DateTime CreatedAt { get; set; }
+        public String? UserName { get; set; }
         /// <summary>
         /// IsApproved property for DTO.
         /// </summary>
         public Boolean IsApproved { get; set; }
-        public UserRequestBuildDto? User { get; set; }
+        /// <summary>
+        /// CreatedAt property for DTO.
+        /// </summary>
+        public DateTime CreatedAt { get; set; }
+        /// <summary>
+        /// ProductId property for DTO.
+        /// </summary>
+        public String? ProductId { get; set; }
         public ProductRequestBuildDto? Product { get; set; }
     }
 }

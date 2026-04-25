@@ -18,10 +18,6 @@ namespace V1.DyModels.Dto.Build.Responses
         /// </summary>
         public String? UserId { get; set; }
         /// <summary>
-        /// ProductId property for DTO.
-        /// </summary>
-        public String? ProductId { get; set; }
-        /// <summary>
         /// Rating property for DTO.
         /// </summary>
         public Int32 Rating { get; set; }
@@ -30,14 +26,21 @@ namespace V1.DyModels.Dto.Build.Responses
         /// </summary>
         public String? Comment { get; set; }
         /// <summary>
-        /// CreatedAt property for DTO.
+        /// UserName property for DTO.
         /// </summary>
-        public DateTime CreatedAt { get; set; }
+        public String? UserName { get; set; }
         /// <summary>
         /// IsApproved property for DTO.
         /// </summary>
         public Boolean IsApproved { get; set; }
-        public UserResponseBuildDto? User { get; set; }
+        /// <summary>
+        /// CreatedAt property for DTO.
+        /// </summary>
+        public DateTime CreatedAt { get; set; }
+        /// <summary>
+        /// ProductId property for DTO.
+        /// </summary>
+        public String? ProductId { get; set; }
         public ProductResponseBuildDto? Product { get; set; }
     }
 }

@@ -14,10 +14,6 @@ namespace V1.DyModels.Dto.Build.Responses
         /// </summary>
         public String? ProductFileId { get; set; }
         /// <summary>
-        /// ProductId property for DTO.
-        /// </summary>
-        public String? ProductId { get; set; }
-        /// <summary>
         /// FileName property for DTO.
         /// </summary>
         public String? FileName { get; set; }
@@ -41,6 +37,10 @@ namespace V1.DyModels.Dto.Build.Responses
         /// UploadedAt property for DTO.
         /// </summary>
         public DateTime UploadedAt { get; set; }
+        /// <summary>
+        /// ProductId property for DTO.
+        /// </summary>
+        public String? ProductId { get; set; }
         public ProductResponseBuildDto? Product { get; set; }
     }
 }

@@ -1,0 +1,19 @@
+using AutoGenerator;
+using AutoGenerator.Helper.Translation;
+using SADA.API.Models;
+using System;
+using V1.BPR.Layers.Base;
+
+namespace V1.DyModels.VMs
+{
+    /// <summary>
+    /// Variant  property for VM Update.
+    /// </summary>
+    public class VariantUpdateVM : ITVM
+    {
+        ///
+        public string? Id { get; set; }
+        ///
+        public VariantCreateVM? Body { get; set; }
+    }
+}

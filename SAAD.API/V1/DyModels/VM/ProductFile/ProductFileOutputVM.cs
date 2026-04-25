@@ -14,8 +14,6 @@ namespace V1.DyModels.VMs
         ///
         public String? ProductFileId { get; set; }
         ///
-        public String? ProductId { get; set; }
-        ///
         public String? FileName { get; set; }
         ///
         public String? FileUrl { get; set; }
@@ -27,6 +25,8 @@ namespace V1.DyModels.VMs
         public Boolean IsMainImage { get; set; }
         ///
         public DateTime UploadedAt { get; set; }
+        ///
+        public String? ProductId { get; set; }
         public ProductOutputVM? Product { get; set; }
     }
 }

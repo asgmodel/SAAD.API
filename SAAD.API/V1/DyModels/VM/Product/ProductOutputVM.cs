@@ -18,20 +18,31 @@ namespace V1.DyModels.VMs
         ///
         public String? Description { get; set; }
         ///
-        public Decimal Price { get; set; }
+        public String? Currency { get; set; }
         ///
-        public Int32 StockQuantity { get; set; }
+        public String? ImageUrl { get; set; }
+        //
+        public List<String>? Images { get; set; }
+        ///
+        public String? Category { get; set; }
+        ///
+        public String? CategoryId { get; set; }
         ///
         public String? SKU { get; set; }
         ///
         public String? Brand { get; set; }
         ///
-        public String? CategoryId { get; set; }
+        public Int32 InteractionCount { get; set; }
         ///
-        public DateTime CreatedAt { get; set; }
+        public String? OfferType { get; set; }
+        ///
+        public string? OfferEndDate { get; set; }
         ///
         public Boolean IsActive { get; set; }
-        public CategoryOutputVM? Category { get; set; }
+        ///
+        public DateTime CreatedAt { get; set; }
+        //
+        public List<VariantOutputVM>? Variants { get; set; }
         //
         public List<ProductFileOutputVM>? ProductFiles { get; set; }
         //

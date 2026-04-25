@@ -16,16 +16,17 @@ namespace V1.DyModels.VMs
         ///
         public String? UserId { get; set; }
         ///
-        public String? ProductId { get; set; }
-        ///
         public Int32 Rating { get; set; }
         ///
         public String? Comment { get; set; }
         ///
-        public DateTime CreatedAt { get; set; }
+        public String? UserName { get; set; }
         ///
         public Boolean IsApproved { get; set; }
-        public UserOutputVM? User { get; set; }
+        ///
+        public DateTime CreatedAt { get; set; }
+        ///
+        public String? ProductId { get; set; }
         public ProductOutputVM? Product { get; set; }
     }
 }

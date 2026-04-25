@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+
 namespace SADA.API.Models
 {
    
@@ -94,75 +95,171 @@ namespace SADA.API.Models
         public Category Category { get; set; }
     }
 
-  
-    public class Product: ITModel
+
+    //public class Product: ITModel
+    //{
+    //    public string  ProductId { get; set; }
+    //    public string Name { get; set; }
+    //    public string Description { get; set; }
+    //    public decimal Price { get; set; }
+    //    public int StockQuantity { get; set; }
+    //    public string SKU { get; set; }
+    //    public string Brand { get; set; }
+
+
+    //    public string CategoryId { get; set; }
+
+    //    public DateTime CreatedAt { get; set; }
+    //    public bool IsActive { get; set; }
+
+
+    //    public Category Category { get; set; }
+    //    public ICollection<ProductFile> ProductFiles { get; set; }
+    //    public ICollection<ProductReview> ProductReviews { get; set; }
+    //}
+    public class Product : ITModel
     {
-        public string  ProductId { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public decimal Price { get; set; }
-        public int StockQuantity { get; set; }
-        public string SKU { get; set; }
-        public string Brand { get; set; }
 
-      
-        public string CategoryId { get; set; }
+        public string? ProductId { get; set; }
 
-        public DateTime CreatedAt { get; set; }
+        public string? Name { get; set; }
+       // public string NameAr { get; set; }
+
+        public string? Description { get; set; }
+        //public string DescriptionAr { get; set; }
+
+        public string? Currency { get; set; }
+
+        public string? ImageUrl { get; set; }
+        public List<string>? Images { get; set; }
+
+        public string? Category { get; set; }
+        public string? CategoryId { get; set; }
+
+        public string? SKU { get; set; }
+        public string? Brand { get; set; }
+
+        public int InteractionCount { get; set; }
+
+        public string? OfferType { get; set; }
+        public string? OfferEndDate { get; set; }
+
         public bool IsActive { get; set; }
+        public DateTime CreatedAt { get; set; }
 
-    
-        public Category Category { get; set; }
-        public ICollection<ProductFile> ProductFiles { get; set; }
-        public ICollection<ProductReview> ProductReviews { get; set; }
+        // 🔗 العلاقات
+        public List<Variant>? Variants { get; set; }
+        public List<ProductFile>? ProductFiles { get; set; }
+        public List<ProductReview>? ProductReviews { get; set; }
     }
-
-    
-    public class ProductFile: ITModel
+    public class ProductFile : ITModel
     {
-        public string  ProductFileId { get; set; }
-        public string  ProductId { get; set; }
-        public string FileName { get; set; }
-        public string FileUrl { get; set; }
-        public string FileType { get; set; } // Image, Video, PDF
+       
+        public string? ProductFileId { get; set; }
+
+        public string? FileName { get; set; }
+        public string? FileUrl { get; set; }
+
+        public string? FileType { get; set; }
         public long FileSize { get; set; }
+
         public bool IsMainImage { get; set; }
+
         public DateTime UploadedAt { get; set; }
 
-        // Navigation property
+        // 🔗 العلاقة
+        public string? ProductId { get; set; }
+
+        [ForeignKey("ProductId")]
+        public Product? Product { get; set; }
+    }
+
+
+    //public class ProductFile: ITModel
+    //{
+    //    public string  ProductFileId { get; set; }
+    //    public string  ProductId { get; set; }
+    //    public string FileName { get; set; }
+    //    public string FileUrl { get; set; }
+    //    public string FileType { get; set; } // Image, Video, PDF
+    //    public long FileSize { get; set; }
+    //    public bool IsMainImage { get; set; }
+    //    public DateTime UploadedAt { get; set; }
+
+    //    // Navigation property
+    //    public Product Product { get; set; }
+    //}
+    public class Variant :ITModel
+    {
+        
+        public string? VariantId { get; set; }
+
+        public string? Name { get; set; }
+
+        public decimal Price { get; set; }
+        public decimal? OriginalPrice { get; set; }
+
+        public int Stock { get; set; }
+
+        // 🔗 العلاقة
+        public string? ProductId { get; set; }
+
+        [ForeignKey("ProductId")]
         public Product Product { get; set; }
     }
 
- 
+
     public class ShoppingCartItem: ITModel
     {
-        public string ShoppingCartItemId { get; set; }
-        public string  UserId { get; set; }
-        public string  ProductId { get; set; }
+        public string? ShoppingCartItemId { get; set; }
+        public string?  UserId { get; set; }
+        public string?  ProductId { get; set; }
         public int Quantity { get; set; }
         public DateTime AddedAt { get; set; }
 
         // Navigation properties
-        public User User { get; set; }
-        public Product Product { get; set; }
+        public User?  User { get; set; }
+        public Product? Product { get; set; }
     }
 
     // ============================================
     // 7. تقييمات المنتجات (ProductReview)
     // ============================================
-    public class ProductReview: ITModel
+    //public class ProductReview: ITModel
+    //{
+    //    public string  ProductReviewId { get; set; }
+    //    public string UserId { get; set; }
+    //    public string  ProductId { get; set; }
+    //    public int Rating { get; set; }  // 1-5
+    //    public string Comment { get; set; }
+    //    public DateTime CreatedAt { get; set; }
+    //    public bool IsApproved { get; set; }
+
+    //    // Navigation properties
+    //    public User User { get; set; }
+    //    public Product Product { get; set; }
+    //}
+    public class ProductReview : ITModel
     {
-        public string  ProductReviewId { get; set; }
-        public string UserId { get; set; }
-        public string  ProductId { get; set; }
-        public int Rating { get; set; }  // 1-5
-        public string Comment { get; set; }
-        public DateTime CreatedAt { get; set; }
+        
+        public string? ProductReviewId { get; set; }
+
+        public string? UserId { get; set; }
+
+        public int Rating { get; set; }
+        public string? Comment { get; set; }
+
+        public string? UserName { get; set; }
+
         public bool IsApproved { get; set; }
 
-        // Navigation properties
-        public User User { get; set; }
-        public Product Product { get; set; }
+        public DateTime CreatedAt { get; set; }
+
+        // 🔗 العلاقة
+        public string? ProductId { get; set; }
+
+        [ForeignKey("ProductId")]
+        public Product? Product { get; set; }
     }
 
     // ============================================
@@ -170,36 +267,36 @@ namespace SADA.API.Models
     // ============================================
     public class Order: ITModel
     {
-        public string OrderId { get; set; }
+        public string? OrderId { get; set; }
 
         // Foreign Key
-        public string  UserId { get; set; }
+        public string?  UserId { get; set; }
 
         public DateTime OrderDate { get; set; }
 
         // معلومات الشحن
-        public string ShippingAddress { get; set; }
-        public string ShippingCity { get; set; }
-        public string ShippingCountry { get; set; }
-        public string ShippingZipCode { get; set; }
-        public string ShippingPhone { get; set; }
+        public string? ShippingAddress { get; set; }
+        public string? ShippingCity { get; set; }
+        public string? ShippingCountry { get; set; }
+        public string? ShippingZipCode { get; set; }
+        public string? ShippingPhone { get; set; }
 
         public decimal TotalAmount { get; set; }
         public decimal ShippingCost { get; set; }
         public decimal TaxAmount { get; set; }
         public decimal DiscountAmount { get; set; }
 
-        public string OrderStatus { get; set; }  // Pending, Confirmed, Shipped, Delivered, Cancelled
-        public string PaymentStatus { get; set; } // Paid, Unpaid, Refunded
-        public string TrackingNumber { get; set; }
+        public string? OrderStatus { get; set; }  // Pending, Confirmed, Shipped, Delivered, Cancelled
+        public string? PaymentStatus { get; set; } // Paid, Unpaid, Refunded
+        public string? TrackingNumber { get; set; }
 
         public DateTime? ShippedAt { get; set; }
         public DateTime? DeliveredAt { get; set; }
 
         // Navigation properties
-        public User User { get; set; }
-        public ICollection<OrderItem> OrderItems { get; set; }
-        public ICollection<Transaction> Transactions { get; set; }
+        public User?  User { get; set; }
+        public ICollection<OrderItem>? OrderItems { get; set; }
+        public ICollection<Transaction>? Transactions { get; set; }
     }
 
     // ============================================
@@ -207,17 +304,17 @@ namespace SADA.API.Models
     // ============================================
     public class OrderItem: ITModel
     {
-        public string OrderItemId { get; set; }
-        public string  OrderId { get; set; }
-        public string  ProductId { get; set; }
+        public string? OrderItemId { get; set; }
+        public string?  OrderId { get; set; }
+        public string?  ProductId { get; set; }
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
         public decimal Discount { get; set; }
         public decimal TotalPrice => (UnitPrice * Quantity) - Discount;
 
         // Navigation properties
-        public Order Order { get; set; }
-        public Product Product { get; set; }
+        public Order? Order { get; set; }
+        public Product? Product { get; set; }
     }
 
     // ============================================
@@ -225,22 +322,22 @@ namespace SADA.API.Models
     // ============================================
     public class Event: ITModel
     {
-        public string EventId { get; set; }
-        public string EventName { get; set; }
-        public string EventType { get; set; }  // OrderCreated, PaymentReceived, StockUpdated, UserRegistered
+        public string? EventId { get; set; }
+        public string? EventName { get; set; }
+        public string? EventType { get; set; }  // OrderCreated, PaymentReceived, StockUpdated, UserRegistered
         public DateTime EventDateTime { get; set; }
-        public string Source { get; set; }  // API, UserAction, SystemTrigger
-        public string Description { get; set; }
+        public string? Source { get; set; }  // API, UserAction, SystemTrigger
+        public string? Description { get; set; }
 
         // من قام بإنشاء/التسبب في هذا الحدث
         public int? TriggeredByUserId { get; set; }
-        public string TriggeredBySystem { get; set; }
+        public string? TriggeredBySystem { get; set; }
 
-        public string Severity { get; set; }  // Info, Warning, Error
+        public string? Severity { get; set; }  // Info, Warning, Error
         //public Dictionary<string, object> EventData { get; set; } // بيانات إضافية
 
         // Navigation properties
-        public User TriggeredByUser { get; set; }
+        public User? TriggeredByUser { get; set; }
         public ICollection<Operation> Operations { get; set; }
     }
 
@@ -249,23 +346,23 @@ namespace SADA.API.Models
     // ============================================
     public class Operation: ITModel
     {
-        public string OperationId { get; set; }
-        public string OperationName { get; set; }  // CreateOrder, ProcessPayment, UpdateInventory, SendEmail
+        public string? OperationId { get; set; }
+        public string? OperationName { get; set; }  // CreateOrder, ProcessPayment, UpdateInventory, SendEmail
         public DateTime ExecutionTime { get; set; }
         public DateTime? CompletionTime { get; set; }
-        public string Status { get; set; }  // Pending, InProgress, Completed, Failed
-        public string LogDetails { get; set; }
+        public string? Status { get; set; }  // Pending, InProgress, Completed, Failed
+        public string? LogDetails { get; set; }
 
         // Foreign Keys
         public string ? EventId { get; set; }
         public string ? UserId { get; set; }
 
         public int? RetryCount { get; set; }
-        public string ErrorMessage { get; set; }
+        public string? ErrorMessage { get; set; }
 
         // Navigation properties
-        public Event Event { get; set; }
-        public User User { get; set; }
+        public Event? Event { get; set; }
+        public User? User { get; set; }
         public ICollection<Transaction> Transactions { get; set; }
     }
 
@@ -274,40 +371,153 @@ namespace SADA.API.Models
     // ============================================
     public class Transaction: ITModel
     {
-        public string TransactionId { get; set; }
+        public string? TransactionId { get; set; }
         public DateTime TransactionDate { get; set; }
-        public decimal Amount { get; set; }
-        public string TransactionType { get; set; }  // Payment, Refund, Authorization
-        public string PaymentMethod { get; set; }   // CreditCard, PayPal, BankTransfer, Cash
-        public string TransactionStatus { get; set; } // Pending, Success, Failed
-        public string ReferenceNumber { get; set; }
-        public string Notes { get; set; }
+        public decimal? Amount { get; set; }
+        public string? TransactionType { get; set; }  // Payment, Refund, Authorization
+        public string? PaymentMethod { get; set; }   // CreditCard, PayPal, BankTransfer, Cash
+        public string? TransactionStatus { get; set; } // Pending, Success, Failed
+        public string? ReferenceNumber { get; set; }
+        public string? Notes { get; set; }
 
         // Foreign Keys
-        public string  OrderId { get; set; }
-        public string ? OperationId { get; set; }
-        public string UserId { get; set; }
+        public string?  OrderId { get; set; }
+        public string? OperationId { get; set; }
+        public string? UserId { get; set; }
 
-        public string BankReference { get; set; }
-        public string CardLastFour { get; set; }
+        public string? BankReference { get; set; }
+        public string? CardLastFour { get; set; }
         public DateTime? SettledAt { get; set; }
 
         // Navigation properties
-        public Order Order { get; set; }
-        public Operation Operation { get; set; }
-        public User User { get; set; }
+        public Order? Order { get; set; }
+        public Operation? Operation { get; set; }
+        public User? User { get; set; }
     }
 
     ///* ================= CHAT ================= */
 
-
-
-
-
-
-
-
-
-
-
 }
+
+
+
+
+//using System;
+//using System.Collections.Generic;
+//using System.ComponentModel.DataAnnotations;
+//using System.ComponentModel.DataAnnotations.Schema;
+
+//namespace YourProject.Models
+//{
+//    // =========================
+//    // 🟦 Product
+//    // =========================
+//    public class Product
+//    {
+       
+//        public string Id { get; set; }
+
+//        public string Name { get; set; }
+//        public string NameAr { get; set; }
+
+//        public string Description { get; set; }
+//        public string DescriptionAr { get; set; }
+
+//        public string Currency { get; set; }
+
+//        public string ImageUrl { get; set; }
+//        public List<string>? Images { get; set; }
+
+//        public string Category { get; set; }
+//        public string CategoryId { get; set; }
+
+//        public string SKU { get; set; }
+//        public string Brand { get; set; }
+
+//        public int InteractionCount { get; set; }
+
+//        public string OfferType { get; set; }
+//        public DateTime? OfferEndDate { get; set; }
+
+//        public bool IsActive { get; set; }
+//        public DateTime CreatedAt { get; set; }
+
+//        // 🔗 العلاقات
+//        public List<Variant> Variants { get; set; }
+//        public List<ProductFile> ProductFiles { get; set; }
+//        public List<ProductReview> ProductReviews { get; set; }
+//    }
+
+//    // =========================
+//    // 🟩 Variant
+//    // =========================
+//    public class Variant
+//    {
+//        [Key]
+//        public string Id { get; set; }
+
+//        public string Name { get; set; }
+
+//        public decimal Price { get; set; }
+//        public decimal? OriginalPrice { get; set; }
+
+//        public int Stock { get; set; }
+
+//        // 🔗 العلاقة
+//        public string ProductId { get; set; }
+
+//        [ForeignKey("ProductId")]
+//        public Product Product { get; set; }
+//    }
+
+//    // =========================
+//    // 🟨 ProductFile
+//    // =========================
+//    public class ProductFile
+//    {
+//        [Key]
+//        public string Id { get; set; }
+
+//        public string FileName { get; set; }
+//        public string FileUrl { get; set; }
+
+//        public string FileType { get; set; }
+//        public long FileSize { get; set; }
+
+//        public bool IsMainImage { get; set; }
+
+//        public DateTime UploadedAt { get; set; }
+
+//        // 🔗 العلاقة
+//        public string ProductId { get; set; }
+
+//        [ForeignKey("ProductId")]
+//        public Product Product { get; set; }
+//    }
+
+//    // =========================
+//    // 🟥 ProductReview
+//    // =========================
+//    public class ProductReview
+//    {
+//        [Key]
+//        public string Id { get; set; }
+
+//        public string UserId { get; set; }
+
+//        public int Rating { get; set; }
+//        public string Comment { get; set; }
+
+//        public string UserName { get; set; }
+
+//        public bool IsApproved { get; set; }
+
+//        public DateTime CreatedAt { get; set; }
+
+//        // 🔗 العلاقة
+//        public string ProductId { get; set; }
+
+//        [ForeignKey("ProductId")]
+//        public Product Product { get; set; }
+//    }
+//}

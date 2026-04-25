@@ -25,6 +25,8 @@ namespace LAHJA.API.Data
         public DbSet<CategoryMedia> CategoryMedias { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductFile> ProductFiles { get; set; }
+        public DbSet<Variant> Variants { get; set; }
+
         public DbSet<ProductReview> ProductReviews { get; set; }
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
         public DbSet<Order> Orders { get; set; }

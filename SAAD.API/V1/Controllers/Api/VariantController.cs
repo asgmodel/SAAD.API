@@ -16,10 +16,10 @@ namespace V1.Controllers.Api
     //[ApiExplorerSettings(GroupName = "V1")]
     [Route("api/V1/[controller]")]
     [ApiController]
-    public class UserController : BaseBPRControllerLayer<UserRequestBuildDto, UserResponseBuildDto, UserCreateVM, UserOutputVM, UserUpdateVM, UserInfoVM, UserDeleteVM, UserFilterVM>
+    public class VariantController : BaseBPRControllerLayer<VariantRequestBuildDto, VariantResponseBuildDto, VariantCreateVM, VariantOutputVM, VariantUpdateVM, VariantInfoVM, VariantDeleteVM, VariantFilterVM>
     {
-        private readonly UserBuilderRepository _service;
-        public UserController(IMapper mapper, ILoggerFactory logger, UserBuilderRepository bPR) : base(mapper, logger, bPR)
+        private readonly VariantBuilderRepository _service;
+        public VariantController(IMapper mapper, ILoggerFactory logger, VariantBuilderRepository bPR) : base(mapper, logger, bPR)
         {
             _service = bPR;
         }

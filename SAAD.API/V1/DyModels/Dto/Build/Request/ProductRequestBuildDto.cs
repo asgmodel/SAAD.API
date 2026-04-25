@@ -12,7 +12,7 @@ namespace V1.DyModels.Dto.Build.Requests
         /// <summary>
         /// ProductId property for DTO.
         /// </summary>
-        public String? ProductId { get; set; }= "proudct-" + Guid.NewGuid();
+        public String? ProductId { get; set; } = $"Product_{Guid.NewGuid().ToString()}";
         /// <summary>
         /// Name property for DTO.
         /// </summary>
@@ -22,13 +22,22 @@ namespace V1.DyModels.Dto.Build.Requests
         /// </summary>
         public String? Description { get; set; }
         /// <summary>
-        /// Price property for DTO.
+        /// Currency property for DTO.
         /// </summary>
-        public Decimal Price { get; set; }
+        public String? Currency { get; set; }
         /// <summary>
-        /// StockQuantity property for DTO.
+        /// ImageUrl property for DTO.
         /// </summary>
-        public Int32 StockQuantity { get; set; }
+        public String? ImageUrl { get; set; }
+        public ICollection<String>? Images { get; set; }
+        /// <summary>
+        /// Category property for DTO.
+        /// </summary>
+        public String? Category { get; set; }
+        /// <summary>
+        /// CategoryId property for DTO.
+        /// </summary>
+        public String? CategoryId { get; set; }
         /// <summary>
         /// SKU property for DTO.
         /// </summary>
@@ -38,18 +47,26 @@ namespace V1.DyModels.Dto.Build.Requests
         /// </summary>
         public String? Brand { get; set; }
         /// <summary>
-        /// CategoryId property for DTO.
+        /// InteractionCount property for DTO.
         /// </summary>
-        public String? CategoryId { get; set; }
+        public Int32 InteractionCount { get; set; }
         /// <summary>
-        /// CreatedAt property for DTO.
+        /// OfferType property for DTO.
         /// </summary>
-        public DateTime CreatedAt { get; set; }
+        public String? OfferType { get; set; }
+        /// <summary>
+        /// OfferEndDate property for DTO.
+        /// </summary>
+        public string? OfferEndDate { get; set; }
         /// <summary>
         /// IsActive property for DTO.
         /// </summary>
         public Boolean IsActive { get; set; }
-        public CategoryRequestBuildDto? Category { get; set; }
+        /// <summary>
+        /// CreatedAt property for DTO.
+        /// </summary>
+        public DateTime CreatedAt { get; set; }
+        public ICollection<VariantRequestBuildDto>? Variants { get; set; }
         public ICollection<ProductFileRequestBuildDto>? ProductFiles { get; set; }
         public ICollection<ProductReviewRequestBuildDto>? ProductReviews { get; set; }
     }

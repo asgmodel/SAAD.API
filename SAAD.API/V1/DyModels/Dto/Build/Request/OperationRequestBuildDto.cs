@@ -12,7 +12,7 @@ namespace V1.DyModels.Dto.Build.Requests
         /// <summary>
         /// OperationId property for DTO.
         /// </summary>
-        public String? OperationId { get; set; }= "operation-" + Guid.NewGuid();
+        public String? OperationId { get; set; } = $"Operation_{Guid.NewGuid().ToString()}";
         /// <summary>
         /// OperationName property for DTO.
         /// </summary>

@@ -12,7 +12,7 @@ namespace V1.DyModels.Dto.Build.Requests
         /// <summary>
         /// TransactionId property for DTO.
         /// </summary>
-        public String? TransactionId { get; set; }= "trans-" + Guid.NewGuid();
+        public String? TransactionId { get; set; } = $"Transaction_{Guid.NewGuid().ToString()}";
         /// <summary>
         /// TransactionDate property for DTO.
         /// </summary>

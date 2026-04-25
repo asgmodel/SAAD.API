@@ -13,15 +13,15 @@ using V1.BPR.Layers.Base;
 namespace V1.Repositories.Builder
 {
     /// <summary>
-    /// Category class property for BuilderRepository.
+    /// Variant class property for BuilderRepository.
     /// </summary>
      //
-    public class CategoryBuilderRepository : BaseBuilderRepository<Category, CategoryRequestBuildDto, CategoryResponseBuildDto>, ICategoryBuilderRepository<CategoryRequestBuildDto, CategoryResponseBuildDto>, ITBuilder
+    public class VariantBuilderRepository : BaseBuilderRepository<Variant, VariantRequestBuildDto, VariantResponseBuildDto>, IVariantBuilderRepository<VariantRequestBuildDto, VariantResponseBuildDto>, ITBuilder
     {
         /// <summary>
-        /// Constructor for CategoryBuilderRepository.
+        /// Constructor for VariantBuilderRepository.
         /// </summary>
-        public CategoryBuilderRepository(LahjaDataContext dbContext, IMapper mapper, ILoggerFactory logger) : base(dbContext, mapper, logger) // Initialize  constructor.
+        public VariantBuilderRepository(LahjaDataContext dbContext, IMapper mapper, ILoggerFactory logger) : base(dbContext, mapper, logger) // Initialize  constructor.
         {
         // Initialize necessary fields or call base constructor.
         ///

@@ -12,7 +12,7 @@ namespace V1.DyModels.Dto.Build.Requests
         /// <summary>
         /// UserId property for DTO.
         /// </summary>
-        public String? UserId { get; set; }
+        public String? UserId { get; set; } = $"UserId_{Guid.NewGuid().ToString()}";
         /// <summary>
         /// Username property for DTO.
         /// </summary>

@@ -12,11 +12,7 @@ namespace V1.DyModels.Dto.Build.Requests
         /// <summary>
         /// ProductFileId property for DTO.
         /// </summary>
-        public String? ProductFileId { get; set; }= "productfiled-" + Guid.NewGuid();
-        /// <summary>
-        /// ProductId property for DTO.
-        /// </summary>
-        public String? ProductId { get; set; }
+        public String? ProductFileId { get; set; } = $"ProductFile_{Guid.NewGuid().ToString()}";
         /// <summary>
         /// FileName property for DTO.
         /// </summary>
@@ -41,6 +37,10 @@ namespace V1.DyModels.Dto.Build.Requests
         /// UploadedAt property for DTO.
         /// </summary>
         public DateTime UploadedAt { get; set; }
+        /// <summary>
+        /// ProductId property for DTO.
+        /// </summary>
+        public String? ProductId { get; set; }
         public ProductRequestBuildDto? Product { get; set; }
     }
 }
