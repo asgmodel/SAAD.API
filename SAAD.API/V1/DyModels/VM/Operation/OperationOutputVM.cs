@@ -34,6 +34,6 @@ namespace V1.DyModels.VMs
         //public EventOutputVM? Event { get; set; }
         //public UserOutputVM? User { get; set; }
         //
-        public List<TransactionOutputVM>? Transactions { get; set; }
+        //public List<TransactionOutputVM>? Transactions { get; set; }
     }
 }
