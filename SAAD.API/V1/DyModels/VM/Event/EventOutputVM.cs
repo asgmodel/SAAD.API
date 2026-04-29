@@ -31,6 +31,6 @@ namespace V1.DyModels.VMs
         public String? Severity { get; set; }
         //public UserOutputVM? TriggeredByUser { get; set; }
         //
-        public List<OperationOutputVM>? Operations { get; set; }
+        //public List<OperationOutputVM>? Operations { get; set; }
     }
 }
