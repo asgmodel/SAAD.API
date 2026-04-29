@@ -45,7 +45,7 @@ namespace V1.DyModels.VMs
         public Nullable<DateTime> ShippedAt { get; set; }
         ///
         public Nullable<DateTime> DeliveredAt { get; set; }
-        public UserOutputVM? User { get; set; }
+        //public UserOutputVM? User { get; set; }
         //
         public List<OrderItemOutputVM>? OrderItems { get; set; }
         //
