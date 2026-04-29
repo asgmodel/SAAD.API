@@ -31,8 +31,8 @@ namespace V1.DyModels.VMs
         public Nullable<Int32> RetryCount { get; set; }
         ///
         public String? ErrorMessage { get; set; }
-        public EventOutputVM? Event { get; set; }
-        public UserOutputVM? User { get; set; }
+        //public EventOutputVM? Event { get; set; }
+        //public UserOutputVM? User { get; set; }
         //
         public List<TransactionOutputVM>? Transactions { get; set; }
     }

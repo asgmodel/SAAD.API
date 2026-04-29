@@ -25,7 +25,7 @@ namespace V1.DyModels.VMs
         public Decimal Discount { get; set; }
         ///
         public Decimal TotalPrice { get; set; }
-        public OrderOutputVM? Order { get; set; }
+        //public OrderOutputVM? Order { get; set; }
         public ProductOutputVM? Product { get; set; }
     }
 }

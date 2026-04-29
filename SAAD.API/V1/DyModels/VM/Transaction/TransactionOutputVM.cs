@@ -39,8 +39,8 @@ namespace V1.DyModels.VMs
         public String? CardLastFour { get; set; }
         ///
         public Nullable<DateTime> SettledAt { get; set; }
-        public OrderOutputVM? Order { get; set; }
-        public OperationOutputVM? Operation { get; set; }
-        public UserOutputVM? User { get; set; }
+        //public OrderOutputVM? Order { get; set; }
+        //public OperationOutputVM? Operation { get; set; }
+        //public UserOutputVM? User { get; set; }
     }
 }

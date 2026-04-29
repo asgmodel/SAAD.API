@@ -23,6 +23,6 @@ namespace V1.DyModels.VMs
         public String? Title { get; set; }
         ///
         public Int32 DisplayOrder { get; set; }
-        public CategoryOutputVM? Category { get; set; }
+        //public CategoryOutputVM? Category { get; set; }
     }
 }

@@ -27,6 +27,6 @@ namespace V1.DyModels.VMs
         public DateTime UploadedAt { get; set; }
         ///
         public String? ProductId { get; set; }
-        public ProductOutputVM? Product { get; set; }
+        //public ProductOutputVM? Product { get; set; }
     }
 }

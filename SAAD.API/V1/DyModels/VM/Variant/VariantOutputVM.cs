@@ -23,6 +23,6 @@ namespace V1.DyModels.VMs
         public Int32 Stock { get; set; }
         ///
         public String? ProductId { get; set; }
-        public ProductOutputVM? Product { get; set; }
+        //public ProductOutputVM? Product { get; set; }
     }
 }
