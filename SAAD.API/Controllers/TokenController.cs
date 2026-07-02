@@ -12,27 +12,51 @@ namespace WebApplication2.Controllers
         [HttpPost("add")]
         public IActionResult Add([FromBody] AddTokenRequest request)
         {
-            if (request == null || string.IsNullOrWhiteSpace(request.Token))
+            // Validate request
+            if (request == null)
+                return BadRequest(new ApiResponse("Request body is required"));
+
+            if (string.IsNullOrWhiteSpace(request.Token))
                 return BadRequest(new ApiResponse("Token is required"));
 
+            var token = request.Token.Trim();
+
+            // Check if token already exists (case-insensitive)
+            bool tokenExists = TokenIndex.Values.Any(x =>
+                string.Equals(x.Token, token, StringComparison.OrdinalIgnoreCase));
+
+            if (tokenExists)
+                return Conflict(new ApiResponse("This token already exists."));
+
+            // Generate or use provided ID
             var id = string.IsNullOrWhiteSpace(request.Id)
                 ? Guid.NewGuid().ToString()
                 : request.Id.Trim();
 
+            // Check if ID already exists
+            if (TokenIndex.ContainsKey(id))
+                return Conflict(new ApiResponse("This ID already exists."));
+
+            // Create token object
             var item = new TokenItem
             {
                 Id = id,
-                Token = request.Token.Trim(),
-                Name = request.Name,
+                Token = token,
+                Name = string.IsNullOrWhiteSpace(request.Name)
+                    ? null
+                    : request.Name.Trim(),
                 IsActive = true,
                 UsageCount = 0,
-                CreatedAt = DateTime.UtcNow
+                LastUsedAt = null,
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = null
             };
 
-            TokenIndex[id] = item;
+            // Save token
+            TokenIndex.TryAdd(id, item);
 
             return Ok(new ApiResponse<TokenItem>(
-                "Token added successfully",
+                "Token added successfully.",
                 item
             ));
         }
@@ -88,11 +112,11 @@ namespace WebApplication2.Controllers
                 "Token selected successfully",
                 new TokenVisitorResponse
                 {
-                    Id = item.Id,
-                    Token = item.Token,
-                    Name = item.Name,
-                    UsageCount = item.UsageCount,
-                    LastUsedAt = item.LastUsedAt
+                    //Id = item.Id,
+                    Token = item.Token
+                    //Name = item.Name
+                    //UsageCount = item.UsageCount,
+                    //LastUsedAt = item.LastUsedAt
                 }
             ));
         }
