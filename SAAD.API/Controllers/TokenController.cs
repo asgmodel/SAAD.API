@@ -29,13 +29,10 @@ namespace WebApplication2.Controllers
                 return Conflict(new ApiResponse("This token already exists."));
 
             // Generate or use provided ID
-            var id = string.IsNullOrWhiteSpace(request.Id)
-                ? Guid.NewGuid().ToString()
-                : request.Id.Trim();
+            var id = Guid.NewGuid().ToString();
+               
 
-            // Check if ID already exists
-            if (TokenIndex.ContainsKey(id))
-                return Conflict(new ApiResponse("This ID already exists."));
+            // Check if ID already exis
 
             // Create token object
             var item = new TokenItem
@@ -107,17 +104,14 @@ namespace WebApplication2.Controllers
             item.UpdatedAt = DateTime.UtcNow;
 
             TokenIndex[item.Id] = item;
-
-            return Ok(new ApiResponse<TokenVisitorResponse>(
+            
+            return Ok(new ApiResponse<string>(
                 "Token selected successfully",
-                new TokenVisitorResponse
-                {
-                    //Id = item.Id,
-                    Token = item.Token
-                    //Name = item.Name
-                    //UsageCount = item.UsageCount,
-                    //LastUsedAt = item.LastUsedAt
-                }
+                
+                    
+                      item.Token
+                    
+                
             ));
         }
 
