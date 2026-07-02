@@ -28,7 +28,17 @@ builder.Services
            DbConnectionString = builder.Configuration.GetConnectionString("DefaultConnection"),//UseSqlServer يمكن انشاء قاعده بيانات  
 
        });
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp", policy =>
+    {
+        policy.WithOrigins(
+                "https://vivo2.lahjai.net"
+            )
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 var app = builder.Build();
 
 //// Configure the HTTP request pipeline.
@@ -41,6 +51,7 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 // ✅  Middleware Registration
 app.UseWasmAutoGeneratorApi();
+app.UseCors("AllowReactApp");
 app.UseAuthorization();
 
 app.MapControllers();
